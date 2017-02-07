@@ -1,4 +1,4 @@
-(defproject fentontravers/websocket-server "0.1.4"
+(defproject fentontravers/websocket-server "0.1.5-SNAPSHOT"
   :description "WebSocket Server Library"
   :url "https://github.com/ftravers/websocket-server"
   :license {:name "Eclipse Public License"
@@ -16,4 +16,11 @@
                   ;; ["deploy"]
                   ]
 
+  :repositories [["clojars" {:url "https://clojars.org/repo" :username "ftravers" :password "fKDRSm7pm"}]
+                 ;; ["snapshots" {:url "https://clojars.org/repo" :creds :gpg}]
+                 ;; ["releases" {:url "https://clojars.org/repo" :creds :gpg}]
+                 ;; ["alternate" {:url "https://clojars.org/repo" :creds :gpg} ]
+                 ]
+
+  
   :profiles {:uberjar {:aot :all}})
