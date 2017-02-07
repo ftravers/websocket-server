@@ -6,16 +6,14 @@
   :dependencies [[org.clojure/clojure "1.9.0-alpha12"]
                  [http-kit "2.2.0"]
                  [com.taoensso/timbre "4.8.0"]]
-  :main ^:skip-aot websocket-server.core
   :target-path "target/%s"
   :plugins [[lein-pprint "1.1.2"]]
-
-:release-tasks [["vcs" "assert-committed"]
+  :release-tasks [["vcs" "assert-committed"]
                   ["change" "version"
                    "leiningen.release/bump-version" "release"]
                   ["vcs" "commit"]
                   ["vcs" "tag"]
                   ;; ["deploy"]
-                ]
-  
+                  ]
+
   :profiles {:uberjar {:aot :all}})
