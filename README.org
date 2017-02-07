@@ -1,7 +1,7 @@
-* websocket-server
+* WebSocket Server
 
 This is the server side of the websocket connection.  This is meant to
-be paired with [[https://clojars.org/fentontravers/websocket-client][fentontravers/websocket-client]].
+be paired with [[https://github.com/ftravers/websocket-client][fentontravers/websocket-client].
 
 * Clojars
 
@@ -30,6 +30,6 @@ be paired with [[https://clojars.org/fentontravers/websocket-client][fentontrave
   (let [port 8899]
     (reset! ws-server (start-ws-server port request-handler))))
 
-(defn stop "Stop websocket server" [] (@server))
+(defn stop "Stop websocket server" [] (@ws-server))
 #+END_SRC
 

@@ -2,17 +2,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. websocket-server</a></li>
+<li><a href="#sec-1">1. WebSocket Server</a></li>
 <li><a href="#sec-2">2. Clojars</a></li>
 <li><a href="#sec-3">3. Usage</a></li>
 </ul>
 </div>
 </div>
 
-# websocket-server<a id="sec-1" name="sec-1"></a>
+# WebSocket Server<a id="sec-1" name="sec-1"></a>
 
 This is the server side of the websocket connection.  This is meant to
-be paired with [fentontravers/websocket-client](https://clojars.org/fentontravers/websocket-client).
+be paired with [[<https://github.com/ftravers/websocket-client][fentontravers/websocket-client>].
 
 # Clojars<a id="sec-2" name="sec-2"></a>
 
@@ -38,4 +38,4 @@ be paired with [fentontravers/websocket-client](https://clojars.org/fentontraver
       (let [port 8899]
         (reset! ws-server (start-ws-server port request-handler))))
     
-    (defn stop "Stop websocket server" [] (@server))
+    (defn stop "Stop websocket server" [] (@ws-server))
