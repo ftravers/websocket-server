@@ -8,4 +8,7 @@
                  [com.taoensso/timbre "4.8.0"]]
   :main ^:skip-aot websocket-server.core
   :target-path "target/%s"
+  :plugins [[cider/cider-nrepl "0.15.0-SNAPSHOT"]
+            [lein-pprint "1.1.2"]]
+
   :profiles {:uberjar {:aot :all}})
