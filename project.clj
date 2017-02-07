@@ -8,22 +8,10 @@
                  [com.taoensso/timbre "4.8.0"]]
   :target-path "target/%s"
   :plugins [[lein-pprint "1.1.2"]]
- ;;  :release-tasks [["vcs" "assert-committed"]
- ;;                  ["change" "version"
- ;;                   "leiningen.release/bump-version" "release"]
- ;;                  ["vcs" "commit"]
- ;;                  ["vcs" "tag"]
- ;;                   ["deploy" "clojars"]
- ;; ["change" "version" "leiningen.release/bump-version"]
- ;; ["vcs" "commit"]
- ;; ["vcs" "push"]
- ;;                  ]
 
   :repositories [["clojars" {:url "https://clojars.org/repo" :creds :gpg}]
                  ["snapshots" {:url "https://clojars.org/repo" :creds :gpg}]
                  ["releases" {:url "https://clojars.org/repo" :creds :gpg}]
-                 ["alternate" {:url "https://clojars.org/repo" :creds :gpg} ]
-                 ]
-
+                 ["alternate" {:url "https://clojars.org/repo" :creds :gpg} ]]
   
   :profiles {:uberjar {:aot :all}})

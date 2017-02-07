@@ -1,11 +1,35 @@
 * websocket-server
 
-This is the server side of the websocket connection.
+This is the server side of the websocket connection.  This is meant to
+be paired with [[https://clojars.org/fentontravers/websocket-client][fentontravers/websocket-client]].
 
 * Clojars
 
-    test/websocket_server/core_test.clj/start
+#+BEGIN_SRC config
+[fentontravers/websocket-server "0.1.9"]
+#+END_SRC
 
-Checkout the client library
+* Usage
 
-Then startup the client in a cljs repl and 
+#+BEGIN_SRC clojure
+(require '[websocket-server.core :refer [start-ws-server]])
+
+;; After we start the server a function is returned
+;; that we use for stopping the server.
+(defonce ws-server (atom nil))
+
+(defn request-handler
+  "The function that will take incoming data off the websocket,
+  process it and return a reponse.  In our case we'll simply UPPERCASE
+  whatever is received."
+  [data] (clojure.string/upper-case (str data)))
+
+(defn start
+  "Demonstrate how to use the websocket server library."
+  []
+  (let [port 8899]
+    (reset! ws-server (start-ws-server port request-handler))))
+
+(defn stop "Stop websocket server" [] (@server))
+#+END_SRC
+
