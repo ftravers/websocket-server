@@ -1,7 +1,24 @@
 (ns websocket-server.core-test
   (:require [clojure.test :refer :all]
-            [websocket-server.core :refer :all]))
+            [websocket-server.core :refer [start-ws-server]]
+            [clojure.string :refer [upper-case]]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+;; After we start the server a function is returned
+;; that we use for stopping the server.
+(defonce ws-server (atom nil))
+
+(defn request-handler
+  "The function that will take incoming data off the websocket,
+  process it and return a reponse.  In our case we'll simply UPPERCASE
+  whatever is received."
+  [data] (upper-case (str data)))
+
+(defn start
+  "Demonstrate how to use the websocket server library."
+  []
+  (let [port 8899]
+    (reset! ws-server (start-ws-server port request-handler))))
+
+(defn stop "Stop websocket server" [] (@server))
+
+(defn restart [] (stop) (start))

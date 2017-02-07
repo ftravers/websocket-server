@@ -1,0 +1,11 @@
+* websocket-server
+
+This is the server side of the websocket connection.
+
+* Clojars
+
+    test/websocket_server/core_test.clj/start
+
+Checkout the client library
+
+Then startup the client in a cljs repl and 
