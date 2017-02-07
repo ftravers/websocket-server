@@ -1,4 +1,4 @@
-(defproject fentontravers/websocket-server "0.1.5-SNAPSHOT"
+(defproject fentontravers/websocket-server "0.1.5"
   :description "WebSocket Server Library"
   :url "https://github.com/ftravers/websocket-server"
   :license {:name "Eclipse Public License"
