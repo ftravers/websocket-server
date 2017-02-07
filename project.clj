@@ -16,6 +16,7 @@
                    "leiningen.release/bump-version" "release"]
                   ["vcs" "commit"]
                   ["vcs" "tag"]
-                  ["deploy"]]
+                  ;; ["deploy"]
+                ]
   
   :profiles {:uberjar {:aot :all}})
