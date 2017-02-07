@@ -1,4 +1,4 @@
-(defproject fentontravers/websocket-server "0.1.6"
+(defproject fentontravers/websocket-server "0.1.7-SNAPSHOT"
   :description "WebSocket Server Library"
   :url "https://github.com/ftravers/websocket-server"
   :license {:name "Eclipse Public License"
@@ -8,13 +8,16 @@
                  [com.taoensso/timbre "4.8.0"]]
   :target-path "target/%s"
   :plugins [[lein-pprint "1.1.2"]]
-  ;; :release-tasks [["vcs" "assert-committed"]
-  ;;                 ["change" "version"
-  ;;                  "leiningen.release/bump-version" "release"]
-  ;;                 ["vcs" "commit"]
-  ;;                 ["vcs" "tag"]
-  ;;                 ;; ["deploy"]
-  ;;                 ]
+  :release-tasks [["vcs" "assert-committed"]
+                  ["change" "version"
+                   "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag"]
+                   ["deploy" "clojars"]
+ ["change" "version" "leiningen.release/bump-version"]
+ ["vcs" "commit"]
+ ["vcs" "push"]
+                  ]
 
   :repositories [["clojars" {:url "https://clojars.org/repo" :creds :gpg}]
                  ;; ["snapshots" {:url "https://clojars.org/repo" :creds :gpg}]
