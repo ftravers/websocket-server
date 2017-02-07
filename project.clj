@@ -1,4 +1,4 @@
-(defproject websocket-server "0.1.0"
+(defproject websocket-server "0.1.1-SNAPSHOT"
   :description "WebSocket Server Library"
   :url "https://github.com/ftravers/websocket-server"
   :license {:name "Eclipse Public License"
@@ -8,8 +8,7 @@
                  [com.taoensso/timbre "4.8.0"]]
   :main ^:skip-aot websocket-server.core
   :target-path "target/%s"
-  :plugins [[cider/cider-nrepl "0.15.0-SNAPSHOT"]
-            [lein-pprint "1.1.2"]]
+  :plugins [[lein-pprint "1.1.2"]]
 
 :release-tasks [["vcs" "assert-committed"]
                   ["change" "version"
