@@ -11,4 +11,11 @@
   :plugins [[cider/cider-nrepl "0.15.0-SNAPSHOT"]
             [lein-pprint "1.1.2"]]
 
+:release-tasks [["vcs" "assert-committed"]
+                  ["change" "version"
+                   "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag"]
+                  ["deploy"]]
+  
   :profiles {:uberjar {:aot :all}})
