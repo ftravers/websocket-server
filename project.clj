@@ -16,7 +16,7 @@
                   ;; ["deploy"]
                   ]
 
-  :repositories [["clojars" {:url "https://clojars.org/repo" :username "ftravers" :password "fKDRSm7pm"}]
+  :repositories [["clojars" {:url "https://clojars.org/repo" :creds :gpg}]
                  ;; ["snapshots" {:url "https://clojars.org/repo" :creds :gpg}]
                  ;; ["releases" {:url "https://clojars.org/repo" :creds :gpg}]
                  ;; ["alternate" {:url "https://clojars.org/repo" :creds :gpg} ]
