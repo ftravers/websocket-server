@@ -45,9 +45,9 @@ be paired with [fentontravers/websocket-client](https://github.com/ftravers/webs
 ```
   
 Here is another example that expects EDN in the form of a map that
-looks like {:count 1}, or just a map with a key :count and some
+looks like `{:count 1}`, or just a map with a key `:count` and some
 integer value.  Then it increments that value by 10 and returns it
-back. 
+back.
 
 ```clj  
 (defn request-handler-add10 
