@@ -18,10 +18,6 @@ be paired with [fentontravers/websocket-client](https://github.com/ftravers/webs
 
 ![](https://clojars.org/fentontravers/websocket-server/latest-version.svg)
   
-```clj
-[fentontravers/websocket-server "0.1.9"]
-```
-  
 # Usage<a id="sec-3" name="sec-3"></a>
 
 ```clj  
