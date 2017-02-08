@@ -16,14 +16,13 @@
     (println "Sending Resp: " resp)
     resp))
 
-(defn request-handler-edn-add10
-  "This function will take some EDN and increment a value, and send it back."
-  [data]
-  (println "Received Data: " (str data))
-  (let [req (edn/read-string data)
-        resp (str {:count (+ 10 (:count req))})]
-    (println "Sending Resp: " resp)
-    resp))
+(defn req-hndlr-add10 [data]
+  (->> data
+       edn/read-string
+       :count
+       (+ 10)
+       (hash-map :count)
+       str))
 
 (defn start
   "Demonstrate how to use the websocket server library."

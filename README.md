@@ -26,7 +26,7 @@ be paired with [fentontravers/websocket-client](https://github.com/ftravers/webs
     ;; that we use for stopping the server.
     (defonce ws-server (atom nil))
     
-    (defn request-handler
+    (defn request-handler-upcase-string
       "The function that will take incoming data off the websocket,
       process it and return a reponse.  In our case we'll simply UPPERCASE
       whatever is received."
@@ -36,6 +36,20 @@ be paired with [fentontravers/websocket-client](https://github.com/ftravers/webs
       "Demonstrate how to use the websocket server library."
       []
       (let [port 8899]
-        (reset! ws-server (start-ws-server port request-handler))))
+        (reset! ws-server (start-ws-server port request-handler-upcase-string))))
     
     (defn stop "Stop websocket server" [] (@ws-server))
+
+Here is another example that expects EDN in the form of a map that
+looks like {:count 1}, or just a map with a key :count and some
+integer value.  Then it increments that value by 10 and returns it
+back. 
+
+    (defn request-handler-add10 
+      [data]
+      (->> data
+           edn/read-string
+           :count
+           (+ 10)
+           (hash-map :count)
+           str))
