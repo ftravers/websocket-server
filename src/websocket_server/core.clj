@@ -1,8 +1,8 @@
 (ns websocket-server.core
-  (:require [org.httpkit.server :refer [on-close on-receive run-server
-                                        send! websocket? with-channel]]
-            [taoensso.timbre :refer [spy trace debug]]
-            [clojure.edn :refer [read-string]]))
+  (:require
+   [org.httpkit.server :refer [on-close on-receive run-server send! websocket? with-channel]]
+   [taoensso.timbre :refer [spy trace debug]]
+   [clojure.edn :refer [read-string]]))
 
 (defn websocket-server [cb req]
   (with-channel req channel
