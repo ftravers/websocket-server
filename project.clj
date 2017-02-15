@@ -5,7 +5,8 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.9.0-alpha12"]
                  [http-kit "2.2.0"]
-                 [com.taoensso/timbre "4.8.0"]]
+                 [com.taoensso/timbre "4.8.0"]
+                 [org.clojure/core.async "0.2.395"]]
   :target-path "target/%s"
   :plugins [[lein-pprint "1.1.2"]]
 
