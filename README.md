@@ -1,26 +1,15 @@
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1. WebSocket Server</a></li>
-<li><a href="#sec-2">2. Clojars</a></li>
-<li><a href="#sec-3">3. Usage</a></li>
-</ul>
-</div>
-</div>
-
-# WebSocket Server<a id="sec-1" name="sec-1"></a>
+# WebSocket Server
 
 This is the server side of the websocket connection.  This is meant to
 be paired with [fentontravers/websocket-client](https://github.com/ftravers/websocket-client).
 
-# Clojars<a id="sec-2" name="sec-2"></a>
+# Clojars
 
 ![](https://clojars.org/fentontravers/websocket-server/latest-version.svg)
   
-# Usage<a id="sec-3" name="sec-3"></a>
+# Usage
 
-```clj  
+```clojure
 (require '[websocket-server.core :refer [start-ws-server]])
 
 ;; After we start the server a function is returned
@@ -47,7 +36,7 @@ looks like `{:count 1}`, or just a map with a key `:count` and some
 integer value.  Then it increments that value by 10 and returns it
 back.
 
-```clj  
+```clojure
 (defn request-handler-add10 
   [data]
   (->> data
