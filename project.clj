@@ -8,11 +8,5 @@
                  [com.taoensso/timbre "4.8.0"]
                  [org.clojure/core.async "0.2.395"]]
   :target-path "target/%s"
-  :plugins [[lein-pprint "1.1.2"]]
-
-  :repositories [["clojars" {:url "https://clojars.org/repo" :creds :gpg}]
-                 ["snapshots" {:url "https://clojars.org/repo" :creds :gpg}]
-                 ["releases" {:url "https://clojars.org/repo" :creds :gpg}]
-                 ["alternate" {:url "https://clojars.org/repo" :creds :gpg} ]]
   
   :profiles {:uberjar {:aot :all}})
