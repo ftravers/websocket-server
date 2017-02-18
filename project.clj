@@ -9,9 +9,4 @@
                  [org.clojure/core.async "0.2.395"]]
   :target-path "target/%s"
 
-  :repositories [["clojars" {:url "https://clojars.org/repo" :creds :gpg}]
-                 ["snapshots" {:url "https://clojars.org/repo" :creds :gpg}]
-                 ["releases" {:url "https://clojars.org/repo" :creds :gpg}]
-                 ["alternate" {:url "https://clojars.org/repo" :creds :gpg}]]
-  
   :profiles {:uberjar {:aot :all}})
