@@ -1,6 +1,6 @@
 (ns websocket-server.core
   (:require
-   [org.httpkit.server :refer [on-close on-receive run-server send! websocket? with-channel]]
+   [org.httpkit.server :as hk :refer [on-close on-receive run-server websocket? with-channel]]
    [taoensso.timbre :refer [spy trace debug]]
    [clojure.edn :refer [read-string]]
    [clojure.core.async :as async :refer :all]))
@@ -14,13 +14,9 @@
      channel
      (fn [data]
        (if (websocket? channel)
-         (do
-           (debug (str "Recieved data: " data))
-           (let [resp (cb data)]
-             (debug (str "Replying with: " resp))
-             (send! channel resp))))))))
+         (cb channel data))))))
 
 (defn start-ws-server [port callback]
   (run-server (partial websocket-server callback) {:port port}))
 
-
+(defn send! [channel data] (hk/send! channel data))
