@@ -2,8 +2,7 @@
   (:require
    [org.httpkit.server :as hk :refer [on-close on-receive run-server websocket? with-channel]]
    [taoensso.timbre :refer [spy trace debug]]
-   [clojure.edn :refer [read-string]]
-   [clojure.core.async :as async :refer :all]))
+   [clojure.edn :refer [read-string]]))
 
 (defn websocket-server [cb req]
   (with-channel req channel
