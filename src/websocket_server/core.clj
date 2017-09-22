@@ -1,6 +1,6 @@
 (ns websocket-server.core
   (:require [org.httpkit.server :as http]
-            [taoensso.timbre :as timbre]))
+            [taoensso.timbre :as log]))
 
 (defn websocket-server [cb req]
   (http/with-channel req channel
@@ -11,10 +11,14 @@
      channel
      (fn [data]
        (if (http/websocket? channel)
-         (cb channel data))))))
+         (let [resp (cb data)]
+           (log/debug "RECV: " data)
+           (log/debug "RESP: " resp)
+           (send! channel resp)))))))
 
 (defn start-ws-server [port callback]
-  (http/run-server (partial websocket-server callback) {:port port}))
+  (http/run-server (partial websocket-server callback)
+                   {:port port}))
 
 (defn send! [channel data]
   (http/send! channel data))
