@@ -14,11 +14,9 @@
          (let [resp (cb data)]
            (log/debug "RECV: " data)
            (log/debug "RESP: " resp)
-           (send! channel resp)))))))
+           (http/send! channel resp)))))))
 
 (defn start-ws-server [port callback]
   (http/run-server (partial websocket-server callback)
                    {:port port}))
 
-(defn send! [channel data]
-  (http/send! channel data))
