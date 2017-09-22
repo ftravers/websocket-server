@@ -6,7 +6,7 @@
   (http/with-channel req channel
     (http/on-close
      channel
-     (fn [status] (timbre/debug (str "Websocket channel closed with status: " status))))
+     (fn [status] (log/debug (str "Websocket channel closed with status: " status))))
     (http/on-receive
      channel
      (fn [data]
